@@ -19,6 +19,16 @@ namespace Lab4
         {
             return $"ID: {id}, Title: {title}, Duration: {duration}";
         }
+
+        public bool IsDurationMoreThanThreeHours()
+        {
+            var parts = duration.Split(' ');
+            if (parts.Length == 2 && int.TryParse(parts[0], out int hours))
+            {
+                return hours > 3;
+            }
+            return false;
+        }
     }
 
     class Program
