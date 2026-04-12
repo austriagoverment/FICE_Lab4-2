@@ -31,6 +31,16 @@ namespace Lab4
         }
     }
 
+    public class Concert : CityEvent
+    {
+        public string performer;
+
+        public override string GetInfo()
+        {
+            return base.GetInfo() + $", Performer: {performer}";
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
