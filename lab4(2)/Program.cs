@@ -41,6 +41,16 @@ namespace Lab4
         }
     }
 
+    public class Exhibition : CityEvent
+    {
+        public string location;
+
+        public override string GetInfo()
+        {
+            return base.GetInfo() + $", Location: {location}";
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
