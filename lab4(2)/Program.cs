@@ -55,7 +55,21 @@ namespace Lab4
     {
         static void Main(string[] args)
         {
-          
+            Concert concert = new Concert();
+            concert.title = "RVRB";
+            concert.duration = "2 hours";
+            concert.performer = "Oakwood, American Football, Foxing";
+
+            Exhibition exhibition = new Exhibition();
+            exhibition.title = "Fusion Jams Lucky 7th Birthday";
+            exhibition.duration = "8 hours";
+            exhibition.location = "Kyrylivska Street 41, Kyiv";
+
+            Console.WriteLine(concert.GetInfo());
+            Console.WriteLine(exhibition.GetInfo());
+
+            Console.WriteLine($"Is the concert longer than 3 hours? {concert.IsDurationMoreThanThreeHours()}");
+            Console.WriteLine($"Is the exhibition longer than 3 hours? {exhibition.IsDurationMoreThanThreeHours()}");
         }
     }
 }
