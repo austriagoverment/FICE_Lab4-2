@@ -14,6 +14,11 @@ namespace Lab4
             counter++;
             id = counter;
         }
+
+        public virtual string GetInfo()
+        {
+            return $"ID: {id}, Title: {title}, Duration: {duration}";
+        }
     }
 
     class Program
