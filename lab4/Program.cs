@@ -77,9 +77,7 @@ namespace FileSystem
 
     public class TextFile : File
     {
-        public TextFile(string name, CustomDirectory directory) : base(name, directory)
-        {
-        }
+        public TextFile(string name, CustomDirectory directory) : base(name, directory) { }
 
         public void Open()
         {
