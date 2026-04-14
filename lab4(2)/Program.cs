@@ -100,12 +100,8 @@ namespace Lab4
             Concert concert1 = new Concert { Title = "RVRB", Duration = "2 hours", Performer = "Oakwood, American Football, Foxing" };
             Exhibition exhibition = new Exhibition { Title = "Fusion Jams Lucky 7th Birthday", Duration = "8 hours", Location = "Kyrylivska Street 41, Kyiv" };
 
-            // Тепер можна просто передавати об'єкт у Console.WriteLine, 
-            // і він автоматично викличе ваш новий ToString()
             Console.WriteLine(concert1);
             Console.WriteLine(exhibition);
-
-            Console.WriteLine("---");
 
             Concert concert2 = new Concert { Title = "RVRB", Duration = "2 hours", Performer = "Oakwood, American Football, Foxing" };
             Console.WriteLine($"Are concert1 and concert2 equal? {concert1.Equals(concert2)}");
