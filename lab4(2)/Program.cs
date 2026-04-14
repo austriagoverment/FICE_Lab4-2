@@ -6,15 +6,13 @@ namespace Lab4
     {
         private readonly int id;
         public string Title { get; set; }
-        private string Duration { get; set; }
+        public string Duration { get; set; }
         static int counter = 0;
 
         public CityEvent()
         {
             counter++;
             id = counter;
-            Title = Title;
-            Duration = Duration;
         }
 
         public bool IsDurationMoreThanThreeHours()
@@ -29,7 +27,7 @@ namespace Lab4
 
         public override string ToString()
         {
-            return base.ToString();
+            return $"Title: {Title}, Duration: {Duration}";
         }
 
         public override bool Equals(object obj)
@@ -51,14 +49,9 @@ namespace Lab4
     {
         public string Performer { get; set; }
 
-        public override string GetInfo()
-        {
-            return base.GetInfo() + $", Performer: {Performer}";
-        }
-
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + $", Performer: {Performer}";
         }
 
         public override bool Equals(object obj)
@@ -80,14 +73,9 @@ namespace Lab4
     {
         public string Location { get; set; }
 
-        public override string GetInfo()
-        {
-            return base.GetInfo() + $", Location: {Location}";
-        }
-
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + $", Location: {Location}";
         }
 
         public override bool Equals(object obj)
@@ -112,23 +100,24 @@ namespace Lab4
             Concert concert1 = new Concert { Title = "RVRB", Duration = "2 hours", Performer = "Oakwood, American Football, Foxing" };
             Exhibition exhibition = new Exhibition { Title = "Fusion Jams Lucky 7th Birthday", Duration = "8 hours", Location = "Kyrylivska Street 41, Kyiv" };
 
-            Concert concert2 = new Concert { Title = "RVRB", Duration = "2 hours", Performer = "Oakwood, American Football, Foxing" };
-            Console.WriteLine(concert1.Equals(concert2));
-            Console.WriteLine(exhibition.Equals(concert1));
+            // Тепер можна просто передавати об'єкт у Console.WriteLine, 
+            // і він автоматично викличе ваш новий ToString()
+            Console.WriteLine(concert1);
+            Console.WriteLine(exhibition);
 
+            Console.WriteLine("---");
+
+            Concert concert2 = new Concert { Title = "RVRB", Duration = "2 hours", Performer = "Oakwood, American Football, Foxing" };
+            Console.WriteLine($"Are concert1 and concert2 equal? {concert1.Equals(concert2)}");
+            
             bool isLongerThanThreeHours = exhibition.IsDurationMoreThanThreeHours();
             Console.WriteLine($"Is the exhibition longer than 3 hours? {isLongerThanThreeHours}");
             
             bool isConcertLongerThanThreeHours = concert1.IsDurationMoreThanThreeHours();
             Console.WriteLine($"Is the concert longer than 3 hours? {isConcertLongerThanThreeHours}");
 
-            bool AreEqual = concert1.Equals(concert2);
-            Console.WriteLine($"Are concert1 and concert2 equal? {AreEqual}");
-
-            int hashCode1 = concert1.GetHashCode();
-            int hashCode2 = concert2.GetHashCode();
-            Console.WriteLine($"Hash code of concert1: {hashCode1}");
-            Console.WriteLine($"Hash code of concert2: {hashCode2}");
+            Console.WriteLine($"Hash code of concert1: {concert1.GetHashCode()}");
+            Console.WriteLine($"Hash code of concert2: {concert2.GetHashCode()}");
         }
     }
 }
