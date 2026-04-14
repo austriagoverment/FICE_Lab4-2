@@ -104,16 +104,16 @@ namespace Lab4
             Console.WriteLine(exhibition);
 
             Concert concert2 = new Concert { Title = "RVRB", Duration = "2 hours", Performer = "Oakwood, American Football, Foxing" };
-            Console.WriteLine($"Are concert1 and concert2 equal? {concert1.Equals(concert2)}");
+            Console.WriteLine($"чи дорівнюють концерти? {concert1.Equals(concert2)}");
             
             bool isLongerThanThreeHours = exhibition.IsDurationMoreThanThreeHours();
-            Console.WriteLine($"Is the exhibition longer than 3 hours? {isLongerThanThreeHours}");
+            Console.WriteLine($"чи йде більше 3х годин {isLongerThanThreeHours}");
             
             bool isConcertLongerThanThreeHours = concert1.IsDurationMoreThanThreeHours();
-            Console.WriteLine($"Is the concert longer than 3 hours? {isConcertLongerThanThreeHours}");
+            Console.WriteLine($"чи є концерт довшим за 3 години? {isConcertLongerThanThreeHours}");
 
-            Console.WriteLine($"Hash code of concert1: {concert1.GetHashCode()}");
-            Console.WriteLine($"Hash code of concert2: {concert2.GetHashCode()}");
+            Console.WriteLine($"хеш код концерту1: {concert1.GetHashCode()}");
+            Console.WriteLine($"хеш код концерту2: {concert2.GetHashCode()}");
         }
     }
 }
